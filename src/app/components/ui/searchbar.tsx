@@ -25,7 +25,7 @@ export default function SearchBar() {
     <div>
         <div className="flex">
             <label htmlFor="search-dropdown" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
-        <Dropdown label="Dropdown button">
+        <Dropdown label="type">
             <Dropdown.Item onClick = {() => setSearchCategory("Users")}>
                 Users
             </Dropdown.Item>
