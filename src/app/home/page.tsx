@@ -50,7 +50,7 @@ export default function FollowedPosts() {
         <thead>
           <tr className="text-center">
             <th className="border border-slate-300 ">Title</th>
-            <th className="border border-slate-300 ">Created at</th>
+            <th className="border border-slate-300 ">Created by</th>
             <th className="border border-slate-300 ">Medium</th>
             <th className="border border-slate-300 ">Status</th>
             <th className="border border-slate-300 ">Rating</th>

@@ -16,7 +16,7 @@ export default function Posts({params} :{params:{id:number}}) {
   const { data: session, update } = useSession()
   //console.log(session?.user)
   
-  if (!session?.user || !session?.user?.email) return <h1>Not Loggin In Yet </h1>
+  //if (!session?.user || !session?.user?.email) return <h1>Not Loggin In Yet </h1>
   const [posts,setPosts] = useState<PostModel[]>([]);
   const [sessionId, setSessionId] = useState(0)
 

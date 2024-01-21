@@ -16,7 +16,7 @@ export  interface PostModel{
     status:string,
     medium:string,
     created_at:string
-    userId:string,
+    user_id:string,
     collabrators:string[],
     deletePost:(id: number)=> void;
 }

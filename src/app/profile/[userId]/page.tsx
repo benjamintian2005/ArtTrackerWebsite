@@ -21,7 +21,7 @@ export default function Profile({params} :{params:{userId:number}}) {
     const [followingCount, setFollowingCount] = useState(0)
 
 
-    if (!session?.user || !session?.user?.email) return <h1>Not Loggin In Yet </h1>
+    //if (!session?.user || !session?.user?.email) return <h1>Not Loggin In Yet </h1>
     const [posts,setPosts] = useState<PostModel[]>([]);
     const url = '/api/posts?' +  new URLSearchParams({"User_id": `${params.userId}`})
     //console.log(url)
@@ -54,7 +54,7 @@ export default function Profile({params} :{params:{userId:number}}) {
       }
     },[followedRawData]);
 
-    const url3 = '/api/user?' +  new URLSearchParams({"userId": `${params.userId}`})
+    const url3 = '/api/user?' +  new URLSearchParams({"User_id": `${params.userId}`})
     //console.log(url)
     const {"data": userData}=  useSWR(url3, fetcher)
     //console.log(userData)
@@ -100,6 +100,7 @@ export default function Profile({params} :{params:{userId:number}}) {
         });
         if(add.ok)
         {
+          alert("yo you just followed this dude")
           setFollow("follow successful")
         }
       }

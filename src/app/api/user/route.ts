@@ -5,7 +5,7 @@ import { searchUser} from '@/app/lib/data';
 
 
 export async function GET(request : NextRequest) {
-    const userIdString = request.nextUrl.searchParams.get("userId")
+    const userIdString = request.nextUrl.searchParams.get("User_id")
   
     if(userIdString == null) return  NextResponse.json([])
   

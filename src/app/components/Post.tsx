@@ -1,12 +1,16 @@
-import React from 'react'
+import React,{useEffect, useState} from "react";
 import { PostModel } from '../types'
 import Link from 'next/link'
+import useSWR from "swr";
+import { fetcher } from "../libs";
+
 export default function Post(params: PostModel) {
+  
   
   return (
     <tr>
             <td className='border border-slate-300 text-white'>{params.title}</td>
-            <td className='border border-slate-300 text-center'>{params.created_at}</td>
+            <td className='border border-slate-300 text-white text-center'>{params.created_at}</td>
             <td className='border border-slate-300 text-center'>{params.medium}</td>
             <td className='border border-slate-300 text-center'>{params.status}</td>
             <td className='border border-slate-300 text-center'>{params.rating}</td>
