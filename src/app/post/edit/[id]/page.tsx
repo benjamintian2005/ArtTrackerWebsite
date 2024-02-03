@@ -72,10 +72,10 @@ export default function PostEdit({params} :{params:{id:number}}) {
                 value = {status}
                 onChange ={e=> setStatus(e.target.value)} 
                 className='text-black'>
-                <option value="TV">Completed</option>
-                <option value="Movie">Watching</option>
-                <option value="Albums">Plan to Watch</option>
-                <option value="Books">Dropped</option>
+                <option value="Completed">Completed</option>
+                <option value="Watching / Reading">Watching</option>
+                <option value="Plan to Watch">Plan to Watch</option>
+                <option value="Dropped">Dropped</option>
             </select>        
          </div>
         <div className='w-full py-2'>

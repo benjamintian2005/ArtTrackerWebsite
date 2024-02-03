@@ -19,6 +19,8 @@ export default function Posts({params} :{params:{id:number}}) {
   //if (!session?.user || !session?.user?.email) return <h1>Not Loggin In Yet </h1>
   const [posts,setPosts] = useState<PostModel[]>([]);
   const [sessionId, setSessionId] = useState(0)
+  const [create,setCreate] = useState("Created By");
+
 
   const url4 = '/api/user/getId?' +  new URLSearchParams({"UserEmail": `${session?.user?.email}`})
     const sessionIdRawData =  useSWR(url4, fetcher)
@@ -77,7 +79,7 @@ export default function Posts({params} :{params:{id:number}}) {
         <thead>
           <tr className="text-center">
             <th className="border border-slate-300">Title</th>
-            <th className="border border-slate-300">Created at</th>
+            <th className="border border-slate-300">{create}</th>
             <th className="border border-slate-300">Medium</th>
             <th className="border border-slate-300">Status</th>
             <th className="border border-slate-300">Rating</th>

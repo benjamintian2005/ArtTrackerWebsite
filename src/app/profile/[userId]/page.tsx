@@ -101,7 +101,7 @@ export default function Profile({params} :{params:{userId:number}}) {
         if(add.ok)
         {
           alert("yo you just followed this dude")
-          setFollow("follow successful")
+          setFollow("follow successful") //fix this
         }
       }
   
