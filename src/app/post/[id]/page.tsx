@@ -19,7 +19,6 @@ export default function Posts({params} :{params:{id:number}}) {
   //if (!session?.user || !session?.user?.email) return <h1>Not Loggin In Yet </h1>
   const [posts,setPosts] = useState<PostModel[]>([]);
   const [sessionId, setSessionId] = useState(0)
-  const [create,setCreate] = useState("Created By");
 
 
   const url4 = '/api/user/getId?' +  new URLSearchParams({"UserEmail": `${session?.user?.email}`})
@@ -59,10 +58,13 @@ export default function Posts({params} :{params:{id:number}}) {
   }
   
   let renderedPosts;
+  let create;
   if (sessionId == params.id) {
     renderedPosts = posts && posts.map((item : PostModel)=><Post key={item.id} {...item} deletePost = {delete_Post} />);
+    create = "Created At"
   } 
   else{
+    create = "Created By"
     renderedPosts = posts && posts.map((item : PostModel)=><FollowedPost key={item.id} {...item}/>);
   }
   return (
