@@ -3,22 +3,62 @@ import { PostModel } from '../types'
 import Link from 'next/link'
 import useSWR from "swr";
 import { fetcher } from "../libs";
+import { useRouter } from 'next/navigation'
 
 export default function Post(params: PostModel) {
-  
+  const router = useRouter()
+
   
   return (
-    <tr>
-            <td className='border border-slate-300 text-white'>{params.title}</td>
-            <td className='border border-slate-300 text-white text-center'>{params.created_at}</td>
-            <td className='border border-slate-300 text-center'>{params.medium}</td>
-            <td className='border border-slate-300 text-center'>{params.status}</td>
-            <td className='border border-slate-300 text-center'>{params.rating}</td>
-            <td className='w-52 border border-slate-300'>
-              <button onClick={()=>params.deletePost(params.id)} className='bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded'>Delete</button>
-              <Link href={`/post/edit/${params.id}`} className='bg-yellow-500 p-2 inline-block ml-3 text-black text-sm'>Edit</Link>
-              <Link href={`/post/read/${params.id}`} className='bg-yellow-500 p-2 inline-block ml-3 text-black text-sm'>View</Link>
-            </td>
-    </tr>
+    <div
+    className="self-stretch box-border flex flex-row flex-wrap items-start justify-start pt-3 px-0 pb-3.5 gap-[20px] max-w-full border-t-[1px] border-solid border-gainsboro-100"
+    
+  >
+    <div
+      className="flex-1 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border min-w-[339px] max-w-full mq750:min-w-full"
+      onClick={()=>router.push(`/post/read/${params.id}`)}
+    >
+      <div
+        className="self-stretch relative leading-[150%] font-medium overflow-hidden text-ellipsis whitespace-nowrap"
+      >
+        {params.title}
+      </div>
+    </div>
+    <div
+      className="w-[244px] flex flex-row items-start justify-between py-0 pr-14 pl-0 box-border gap-[20px] text-[12px]"
+    >
+      <div
+        className="w-[66px] rounded-lg bg-white box-border flex flex-row items-start justify-start py-1 px-[7px] whitespace-nowrap border-[1px] border-solid border-gainsboro-100"
+      >
+        <div
+          className="relative leading-[16px] font-semibold inline-block min-w-[50px]"
+        >
+          {params.rating}
+        </div>
+      </div>
+      <div
+        className="w-12 flex flex-col items-start justify-start pt-0.5 px-0 pb-0 box-border text-right text-base text-gray-100"
+      >
+        <div className="self-stretch relative leading-[150%]">{params.created_at}</div>
+      </div>
+    </div>
+    <div className="h-6 w-9 relative hidden"></div>
+    <div className="flex flex-row items-start justify-start gap-[20px]">
+      <img
+        className="h-7 w-7 relative rounded-[1000px] overflow-hidden shrink-0 object-cover min-h-[28px]"
+        loading="lazy"
+        alt=""
+        src="public/trash.png"
+      />
+
+      <img
+        className="h-7 w-7 relative object-cover min-h-[28px]"
+        loading="lazy"
+        alt=""
+        src="public/edit.png"
+        onClick={()=>router.push(`/post/edit/${params.id}`)}
+      />
+    </div>
+  </div>
   )
 }

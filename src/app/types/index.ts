@@ -18,6 +18,7 @@ export  interface PostModel{
     created_at:string
     user_id:string,
     collabrators:string[],
+    name:string,
     deletePost:(id: number)=> void;
 }
 export interface PostAddModel{

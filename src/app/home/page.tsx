@@ -44,26 +44,10 @@ export default function FollowedPosts() {
   if (isLoading) return <div>Loading...</div>;
   if (!data) return null;
   return (
-    <div className="w-full max-w-7xl m-auto">
-      <table className="w-full border-collapse border border-slate-400">
-
-        <thead>
-          <tr className="text-center">
-            <th className="border border-slate-300 ">Title</th>
-            <th className="border border-slate-300 ">Created by</th>
-            <th className="border border-slate-300 ">Medium</th>
-            <th className="border border-slate-300 ">Status</th>
-            <th className="border border-slate-300 ">Rating</th>
-            <th className="border border-slate-300 ">Modify</th>
-            
-          </tr>
-        </thead>
-        <tbody>
-           {
-              posts && posts.map((item : PostModel)=><FollowedPost key={item.id} {...item}/>)
-           }
-        </tbody>
-      </table>
+    <div className="h-screen overscroll-contain">
+      {
+        posts && posts.map((item : PostModel)=><FollowedPost key={item.id} {...item}/>)
+      }
     </div>
   );
 }

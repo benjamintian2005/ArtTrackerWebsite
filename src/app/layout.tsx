@@ -34,11 +34,11 @@ export default async function RootLayout({
   return (
     <SessionProvider session={session}>
     <html lang="en">
-      <body className={inter.className}>
+      
+      <body>
         <Header/>
-        <div className='w-full max-w-7xl mt-4 m-auto'>
-            {children}
-        </div>
+        {children}
+        
       </body>
     </html>
     </SessionProvider>

@@ -19,15 +19,26 @@ export default function FollowedPost(params: PostModel) {
   }
   },[userData]);
   return (
-    <tr>
-            <td className='border border-slate-300'>{params.title}</td>
-            <td className='border border-slate-300 text-center'>{name}</td>
-            <td className='border border-slate-300 text-center'>{params.medium}</td>
-            <td className='border border-slate-300 text-center'>{params.status}</td>
-            <td className='border border-slate-300 text-center'>{params.rating}</td>
-            <td className='w-52 border border-slate-300'>
-              <Link href={`/post/read/${params.id}`} className='bg-yellow-500 p-2 inline-block ml-3 text-white text-sm'>View</Link>
-            </td>
-    </tr>
+    <div
+        className="shadow-[-4px_8px_20px_rgba(0,_0,_0,_0.1)] rounded-xl bg-white box-border w-[405.3px] p-8 border-[1px] border-solid border-whitesmoke-100 mx-auto my-8"
+      >
+        <div className="self-stretch relative leading-[150%] font-medium text-black">
+          {params.content}
+        </div>
+        <div
+          className="flex flex-row items-center justify-start gap-[16px] text-base"
+        >
+          <img
+            className="w-[45px] relative rounded-[50%] h-[45px] object-cover"
+            alt=""
+            src="/public/avatar@2x.png"
+          />
+
+          <div className="flex flex-col items-start justify-start gap-[2px]">
+            <div className="relative leading-[150%] font-medium text-black">{name}</div>
+            
+          </div>
+        </div>
+      </div>
   )
 }
