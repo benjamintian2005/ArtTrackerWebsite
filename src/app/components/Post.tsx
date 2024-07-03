@@ -4,6 +4,8 @@ import Link from 'next/link'
 import useSWR from "swr";
 import { fetcher } from "../libs";
 import { useRouter } from 'next/navigation'
+import Image from "next/image";
+import { deletePost } from "../lib/data";
 
 export default function Post(params: PostModel) {
   const router = useRouter()
@@ -48,15 +50,18 @@ export default function Post(params: PostModel) {
         className="h-7 w-7 relative rounded-[1000px] overflow-hidden shrink-0 object-cover min-h-[28px]"
         loading="lazy"
         alt=""
-        src="public/trash.png"
+        src="/trash.png"
+        onClick={()=>params.deletePost(params.id)}
       />
 
-      <img
+      <Image
         className="h-7 w-7 relative object-cover min-h-[28px]"
         loading="lazy"
-        alt=""
-        src="public/edit.png"
+        alt="image not showing up"
+        src={"/edit.png"}
         onClick={()=>router.push(`/post/edit/${params.id}`)}
+        width={7}
+        height={7}
       />
     </div>
   </div>

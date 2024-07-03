@@ -78,17 +78,17 @@ export default function Profile({params} :{params:{userId:number}}) {
         //console.log(sessionIdRawData.data.result.data);
         setSessionId(sessionIdRawData.data.result.data.id);
         if(params.userId == sessionId){
-          setFollow("This is your account")
+          setFollow("Edit Profile")
         }
         else{
-          setFollow("Follow this account")
+          setFollow("Follow")
         }
       }
     },[sessionIdRawData]);
 
     const follow_account = async (e: any) => {
       e.preventDefault()
-      if(follow == "Follow this account"){
+      if(follow == "Follow"){
         const formData = {
             Following_user_id: sessionId,
             Followed_user_id: params.userId,
@@ -170,8 +170,9 @@ export default function Profile({params} :{params:{userId:number}}) {
           >
             <div
               className="relative text-base leading-[150%] font-medium font-small-text text-black text-left inline-block min-w-[49px]"
+              onClick={follow_account}
             >
-              Follow
+              {follow}
             </div>
           </button>
         </div>

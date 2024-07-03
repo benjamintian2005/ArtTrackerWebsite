@@ -74,7 +74,7 @@ export default function NavBar() {
         <img
           className="h-6 w-6 relative overflow-hidden shrink-0 min-h-[24px]"
           alt=""
-          src="/public/search.svg"
+          src="/search.svg"
         />
 
         <input
