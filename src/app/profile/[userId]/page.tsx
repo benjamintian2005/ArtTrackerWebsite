@@ -14,8 +14,10 @@ export default function Profile({params} :{params:{userId:number}}) {
     //console.log(session?.user)
     const [name, setName] = useState("")
     const [image, setImage] = useState("")
-    const [follow, setFollow] = useState("Follow this person")
+    const [follow, setFollow] = useState("Follow")
     const [sessionId, setSessionId] = useState(0)
+    const [onSelf, setOnSelf] = useState(false)
+
 
     //console.log("this is the user id")
     //console.log(session?.user?.id)
@@ -79,9 +81,11 @@ export default function Profile({params} :{params:{userId:number}}) {
         setSessionId(sessionIdRawData.data.result.data.id);
         if(params.userId == sessionId){
           setFollow("Edit Profile")
+          setOnSelf(true)
         }
         else{
           setFollow("Follow")
+          setOnSelf(false)
         }
       }
     },[sessionIdRawData]);
@@ -121,7 +125,8 @@ export default function Profile({params} :{params:{userId:number}}) {
         setPosts(posts?.filter((post:PostModel)=>{  return post.id !== id  }));
       }
     }
-    let renderedPosts = posts && posts.map((item : PostModel)=><Post key={item.id} {...item} deletePost = {delete_Post} name = {name}/>);
+    let renderedPosts = posts && posts.map((item : PostModel)=><Post key={item.id} {...item} deletePost = {delete_Post} name = {name} 
+                            onSelf = {onSelf}/>);
 
 
     

@@ -9,7 +9,30 @@ import { deletePost } from "../lib/data";
 
 export default function Post(params: PostModel) {
   const router = useRouter()
+  let icon = <div className="flex flex-row items-start justify-start gap-[20px]"></div>
+  if(params.onSelf)
+  {
+   icon = 
+   <div className="flex flex-row items-start justify-start gap-[20px]">
+    <img
+      className="h-7 w-7 relative rounded-[1000px] overflow-hidden shrink-0 object-cover min-h-[28px]"
+      loading="lazy"
+      alt=""
+      src="/trash.png"
+      onClick={()=>params.deletePost(params.id)}
+    />
 
+    <Image
+      className="h-7 w-7 relative object-cover min-h-[28px]"
+      loading="lazy"
+      alt="image not showing up"
+      src={"/edit.png"}
+      onClick={()=>router.push(`/post/edit/${params.id}`)}
+      width={7}
+      height={7}
+    />
+  </div>
+  }
   
   return (
     <div
@@ -45,25 +68,7 @@ export default function Post(params: PostModel) {
       </div>
     </div>
     <div className="h-6 w-9 relative hidden"></div>
-    <div className="flex flex-row items-start justify-start gap-[20px]">
-      <img
-        className="h-7 w-7 relative rounded-[1000px] overflow-hidden shrink-0 object-cover min-h-[28px]"
-        loading="lazy"
-        alt=""
-        src="/trash.png"
-        onClick={()=>params.deletePost(params.id)}
-      />
-
-      <Image
-        className="h-7 w-7 relative object-cover min-h-[28px]"
-        loading="lazy"
-        alt="image not showing up"
-        src={"/edit.png"}
-        onClick={()=>router.push(`/post/edit/${params.id}`)}
-        width={7}
-        height={7}
-      />
-    </div>
+    {icon}
   </div>
   )
 }

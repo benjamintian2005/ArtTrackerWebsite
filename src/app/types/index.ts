@@ -19,7 +19,8 @@ export  interface PostModel{
     user_id:string,
     collabrators:string[],
     name:string,
-    deletePost:(id: number)=> void;
+    deletePost:(id: number)=> void,
+    onSelf:boolean;
 }
 export interface PostAddModel{
     title:string,
