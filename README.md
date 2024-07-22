@@ -2,6 +2,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+To see the live website go to: https://art-tracker-website.vercel.app/
+Click the top right sign in button and start creating!
+
+To run locally add the necessary env variables and follow the instructions below
 First, run the development server:
 
 ```bash
