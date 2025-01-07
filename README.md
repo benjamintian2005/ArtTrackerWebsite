@@ -1,40 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ArtTracker Website
 
-## Getting Started
+ArtTracker is a web application built with Next.js to help users organize and track their art collections. Users can manage personal artwork or track pieces in a gallery. The website allows for adding, editing, viewing, and categorizing artwork based on artist, genre, and style.
 
-To see the live website go to: https://art-tracker-website.vercel.app/
-Click the top right sign in button and start creating!
+## Demo
 
-To run locally add the necessary env variables and follow the instructions below
-First, run the development server:
+You can view the live demo of ArtTracker here:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[**Live Demo**]([https://your-username.vercel.app](https://art-tracker-website.vercel.app/))
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Explore the functionalities of the website, including adding and viewing art pieces, categorizing them by artist, and browsing the collection.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **User Authentication**: Sign up and log in to manage your personal art collection.
+- **Artwork Management**: Add, edit, and delete artwork with details such as title, artist, year, genre, and description.
+- **Artwork Categorization**: Categorize art by artist, genre, or style for easy navigation.
+- **Responsive Design**: Optimized for both desktop and mobile use.
+- **Search Functionality**: Quickly find specific pieces of artwork by title, artist, or category.
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend**: Next.js for building the interactive and dynamic user interface.
+- **Backend**: Serverless functions (if applicable) to manage API requests, hosted on Vercel.
+- **Database**: MongoDB, PostgreSQL, or another database solution to store artwork and user data (if applicable).
+- **Authentication**: JSON Web Tokens (JWT) for secure user authentication.
+- **Styling**: CSS, SCSS, or Tailwind CSS for styling.
+- **Hosting**: Vercel for deployment.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To run the project locally:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/arttracker-website.git
