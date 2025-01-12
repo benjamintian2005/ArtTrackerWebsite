@@ -6,7 +6,7 @@ ArtTracker is a web application built with Next.js to help users organize and tr
 
 You can view the live demo of ArtTracker here:
 
-[**Live Demo**](https://your-username.vercel.app](https://art-tracker-website.vercel.app/))
+[**Live Demo**](https://art-tracker-website.vercel.app/))
 
 Explore the functionalities of the website, including adding and viewing art pieces, categorizing them by artist, and browsing the collection.
 
